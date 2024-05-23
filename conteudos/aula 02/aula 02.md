@@ -284,7 +284,7 @@ module.exports = Usuario;
 
 Esses exemplos mostram como adaptar seu código para usar SQL Server ou MySQL em vez de SQLite, incluindo as etapas de configuração da conexão e a criação da tabela, bem como a implementação do modelo de dados para interagir com o banco de dados.
 
-### 5. Modelos de Dados
+### 5. Modelos de Dados SQLITE
 Crie o arquivo `src/usuario/models/usuarioModel.js`:
 
 ```javascript
