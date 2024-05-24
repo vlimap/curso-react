@@ -521,14 +521,19 @@ module.exports = router;
 Crie o arquivo `src/app.js`:
 
 ```javascript
-const app = require('./app'); // Importa o aplicativo Express configurado
-const port = process.env.PORT || 3000; // Define a porta na qual o servidor irá ouvir
+const express = require('express');
+const app = express();
 
-// Inicia o servidor e faz com que ele comece a ouvir por requisições na porta especificada
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+// Middleware para parsear JSON
+app.use(express.json());
 
+// Importa as rotas do usuário
+const usuarioRoutes = require('./usuario/routes/usuarioRoutes');
+
+// Usa as rotas do usuário
+app.use('/api', usuarioRoutes);
+
+module.exports = app;
 ```
 
 ### 9. Inicialização do Servidor
